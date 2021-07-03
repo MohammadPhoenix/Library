@@ -1,0 +1,17 @@
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\bin\Debug\netstandard2.0\Library.Infrastructure.deps.json
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\bin\Debug\netstandard2.0\Library.Infrastructure.dll
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\bin\Debug\netstandard2.0\Library.Infrastructure.pdb
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.csprojAssemblyReference.cache
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.AssemblyInfo.cs
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.dll
+C:\Users\PHOENIX\Desktop\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.pdb
+C:\Users\a\Desktop\CodeInHomeLibrary\2\CodeInHomeLibrary\Library\Library.Infrastructure\bin\Debug\netstandard2.0\Library.Infrastructure.deps.json
+C:\Users\a\Desktop\CodeInHomeLibrary\2\CodeInHomeLibrary\Library\Library.Infrastructure\bin\Debug\netstandard2.0\Library.Infrastructure.dll
+C:\Users\a\Desktop\CodeInHomeLibrary\2\CodeInHomeLibrary\Library\Library.Infrastructure\bin\Debug\netstandard2.0\Library.Infrastructure.pdb
+C:\Users\a\Desktop\CodeInHomeLibrary\2\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.csprojAssemblyReference.cache
+C:\Users\a\Desktop\CodeInHomeLibrary\2\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\a\Desktop\CodeInHomeLibrary\2\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.AssemblyInfo.cs
+C:\Users\a\Desktop\CodeInHomeLibrary\2\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.dll
+C:\Users\a\Desktop\CodeInHomeLibrary\2\CodeInHomeLibrary\Library\Library.Infrastructure\obj\Debug\netstandard2.0\Library.Infrastructure.pdb

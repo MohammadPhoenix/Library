@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Persistance\Library.Persistance.EF.csproj" />
+    <ProjectReference Include="..\Library.Services\Library.Services.csproj" />
+  </ItemGroup>
+
+</Project>

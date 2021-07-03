@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rxIIUh+sHyfcwVzkZ2cynWyBx8FMHi2FQhnP1cqnWy68fs8RUzSg9d7qqZ5texzkFvJ/4XXWDB+TOHp/t2Vbtg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PHOENIX\\Desktop\\CodeInHomeLibrary\\Library\\Library.Services\\Library.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
