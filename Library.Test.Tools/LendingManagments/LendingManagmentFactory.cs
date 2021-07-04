@@ -6,9 +6,6 @@ using Library.Persistance.EF.MemberShips;
 using Library.Services.LendingManagments;
 using Library.Services.LendingManagments.Contracts;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library.Test.Tools.LendingManagments
 {
@@ -26,7 +23,7 @@ namespace Library.Test.Tools.LendingManagments
 
             return new LendingManagmentAppService(repository, unitOfWork, memberRepisitory, bookRepository);
         }
-        public static AddLendingManagmentDto Generate_AddLendingManagmentDto(int memberId , int bookId , DateTime authorizedDeliveryDate)
+        public static AddLendingManagmentDto Generate_AddLendingManagmentDto(int memberId, int bookId, DateTime authorizedDeliveryDate)
         {
             return new AddLendingManagmentDto
             {
@@ -36,14 +33,13 @@ namespace Library.Test.Tools.LendingManagments
             };
         }
 
-        public   static int AddLendingManagment(int memberShipId, int bookId, DateTime dateTime)
+        public static int AddLendingManagment(int memberShipId, int bookId, DateTime dateTime)
         {
-           var lendingManagment  =  new LendingManagment
+            var lendingManagment = new LendingManagment
             {
                 MemberShipId = memberShipId,
                 BookId = bookId,
                 AuthorizedDeliveryDate = dateTime,
-                
             };
             _context.LendingManagments.Add(lendingManagment);
             _context.SaveChanges();

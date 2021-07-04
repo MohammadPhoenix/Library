@@ -14,7 +14,6 @@ namespace Library.Services.Tests.Unit.BookCategories
     {
         private readonly EFDataContext _context;
         private BookCategoryAppService _sut;
-
         public BookCategoryServiceTests()
         {
 
@@ -23,7 +22,7 @@ namespace Library.Services.Tests.Unit.BookCategories
             _sut = BookCategoryFactory.CreateService(_context);
         }
         [Fact]
-        public void Throw_exceptin_when_thisBookCategory_is_exist()
+        public void Add_throw_exceptin_when_thisBookCategory_is_exist()
         {
             BookCategoryFactory.AddBookCategoryWithTitle(_context, "ScienceFiction");
             var bookCategory = BookCategoryFactory.GenerateBookCategoryWithTitleDto(_context, "ScienceFiction");

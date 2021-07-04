@@ -2,9 +2,7 @@
 using Library.Services.BookCategories.Contracts;
 using Library.Services.Books.Contracts;
 using Library.Services.Books.Exceptions;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Library.Services.Books
@@ -15,7 +13,7 @@ namespace Library.Services.Books
         private readonly UnitOfWork _unitOfWork;
         private readonly BookCategoryRepository _categoryRepository;
 
-        public BookAppService(BookRepository repository, UnitOfWork unitOfWork , BookCategoryRepository categoryRepository)
+        public BookAppService(BookRepository repository, UnitOfWork unitOfWork, BookCategoryRepository categoryRepository)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;
@@ -49,23 +47,6 @@ namespace Library.Services.Books
         {
             return await _repository.GetAllBooksWithThisCategory(bookCategoryId);
         }
-
-        //public async Task<List<GetBookDto>> GetAllBooksInThisCategory(short bookCategoryId)
-        //{
-        //    var booksInThisCategory = await _repository.GetAllBooksWithThisCategory(bookCategoryId);
-        //    List<GetBookDto> list = new List<GetBookDto>();
-        //    foreach (var item in booksInThisCategory)
-        //    {
-        //        list.Add(new GetBookDto
-        //        {
-        //            Title = item.Title,
-        //            Writer = item.Writer
-        //        });
-        //    }
-        //    return list;
-
-        //}
-
         public async Task Update(int bookId, UpdateBookDto dto)
         {
             var book = _repository.Find(bookId);
@@ -75,7 +56,6 @@ namespace Library.Services.Books
             book.MaximumAge = dto.MaximumAge;
             book.MinimumAge = dto.MinimumAge;
             await _unitOfWork.SaveComplete();
-
         }
 
 

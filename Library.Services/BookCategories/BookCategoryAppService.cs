@@ -1,9 +1,6 @@
 ﻿using Library.Entites;
 using Library.Services.BookCategories.Contracts;
 using Library.Services.BookCategories.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Library.Services.BookCategories
@@ -13,7 +10,7 @@ namespace Library.Services.BookCategories
         private readonly BookCategoryRepository _repository;
         private readonly UnitOfWork _unitOfWork;
 
-        public BookCategoryAppService(BookCategoryRepository repository ,UnitOfWork unitOfWork)
+        public BookCategoryAppService(BookCategoryRepository repository, UnitOfWork unitOfWork)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;

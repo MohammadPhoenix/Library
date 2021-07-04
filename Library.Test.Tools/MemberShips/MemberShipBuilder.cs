@@ -1,8 +1,6 @@
 ﻿using Library.Entites;
 using Library.Persistance.EF;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Library.Test.Tools.MemberShips
 {
@@ -17,10 +15,11 @@ namespace Library.Test.Tools.MemberShips
         private MemberShip _memberShip = new MemberShip
         {
             FullName = "Mohammad Gholami",
-            BirthDate = new DateTime(1999,01,01),
+            BirthDate = new DateTime(1999, 01, 01),
             Address = "Shiraz-Atlasi"
         };
-        public MemberShipBuilder WithFullName(string fullName) {
+        public MemberShipBuilder WithFullName(string fullName)
+        {
             _memberShip.FullName = fullName;
             return this;
         }
@@ -34,7 +33,8 @@ namespace Library.Test.Tools.MemberShips
             _memberShip.Address = address;
             return this;
         }
-        public int Build() {
+        public int Build()
+        {
             _context.MemberShips.Add(_memberShip);
             _context.SaveChanges();
             return _memberShip.Id;

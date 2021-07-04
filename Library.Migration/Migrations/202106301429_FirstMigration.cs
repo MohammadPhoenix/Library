@@ -1,7 +1,4 @@
 ﻿using FluentMigrator;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Library.Migration.Migrations
 {
@@ -35,7 +32,8 @@ namespace Library.Migration.Migrations
                 .WithColumn("AuthorizedDeliveryDate").AsDateTime().NotNullable()
                 .WithColumn("DeliveryDate").AsDateTime().Nullable();
 
-            Create.ForeignKey("FK_Books_BookCategories").FromTable("Books").ForeignColumn("BookCategoryId").ToTable("BookCategories").PrimaryColumn("Id");
+            Create.ForeignKey("FK_Books_BookCategories")
+                .FromTable("Books").ForeignColumn("BookCategoryId").ToTable("BookCategories").PrimaryColumn("Id");
 
             Create.ForeignKey("FK_LendingManagments_MemberShips")
                 .FromTable("LendingManagments").ForeignColumn("MemberShipId").ToTable("MemberShips").PrimaryColumn("Id");

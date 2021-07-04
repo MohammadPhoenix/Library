@@ -8,7 +8,6 @@ using Library.Test.Tools.Books;
 using Library.Test.Tools.LendingManagments;
 using Library.Test.Tools.MemberShips;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -53,7 +52,7 @@ namespace Library.Services.Tests.Spec.Lendingmanagments.Add
         [And("خطای سن اعضا خارج از محدوده ی سنی کتاب است نمایش داده شود")]
         private void Then()
         {
-            Func<Task> expedtedException = () =>  _sut.Add(_dto);
+            Func<Task> expedtedException = () => _sut.Add(_dto);
             expedtedException.Should().ThrowExactly<AgeOutOfRangeException>();
 
         }

@@ -19,7 +19,6 @@ namespace Library.Services.Tests.Unit.LendingManagments
     {
         private readonly EFDataContext _context;
         private readonly LendingManagmentService _sut;
-
         public LendingManagmentServiceTests()
         {
             var db = new EFInMemoryDatabase();

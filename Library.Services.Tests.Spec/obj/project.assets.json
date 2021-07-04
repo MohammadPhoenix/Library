@@ -2720,7 +2720,8 @@
         "dependencies": {
           "Library.Entites": "1.0.0",
           "Library.Services": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.16"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.16",
+          "Microsoft.EntityFrameworkCore.Sqlite": "3.1.16"
         },
         "compile": {
           "bin/placeholder/Library.Persistance.EF.dll": {}

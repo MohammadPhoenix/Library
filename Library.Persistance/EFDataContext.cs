@@ -1,9 +1,5 @@
 ﻿using Library.Entites;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Library.Persistance.EF
 {
@@ -30,7 +26,6 @@ namespace Library.Persistance.EF
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(EFDataContext).Assembly);
         }
 
-        
 
     }
 }

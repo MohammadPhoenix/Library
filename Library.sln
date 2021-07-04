@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{B1715881-8178-4F31-A131-798BE1C0747F}"
-	ProjectSection(SolutionItems) = preProject
-		هشدار ها.txt = هشدار ها.txt
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.RestApi", "Library.RestApi\Library.RestApi.csproj", "{D27B7F02-C75B-4C9B-8371-4F26699C0EE9}"
 EndProject
@@ -20,13 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Services", "Library
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Persistance.EF", "Library.Persistance\Library.Persistance.EF.csproj", "{3B817A87-E4F1-4C72-8065-92CF9AA5861E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Infrastructure", "Library.Infrastructure\Library.Infrastructure.csproj", "{6C3F1ED1-04C3-44D5-B178-542C6CCF20CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Infrastructure", "Library.Infrastructure\Library.Infrastructure.csproj", "{6C3F1ED1-04C3-44D5-B178-542C6CCF20CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Services.Tests.Unit", "Library.Services.Tests.Unit\Library.Services.Tests.Unit.csproj", "{DEC85BA1-AD17-451E-A120-3F418AA19B9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Services.Tests.Unit", "Library.Services.Tests.Unit\Library.Services.Tests.Unit.csproj", "{DEC85BA1-AD17-451E-A120-3F418AA19B9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Services.Tests.Spec", "Library.Services.Tests.Spec\Library.Services.Tests.Spec.csproj", "{B00C90F8-7A43-48BB-A6CC-C607969711E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Services.Tests.Spec", "Library.Services.Tests.Spec\Library.Services.Tests.Spec.csproj", "{B00C90F8-7A43-48BB-A6CC-C607969711E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Test.Tools", "Library.Test.Tools\Library.Test.Tools.csproj", "{DFE76808-063C-430B-8E69-D8FA97AFBC61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Test.Tools", "Library.Test.Tools\Library.Test.Tools.csproj", "{DFE76808-063C-430B-8E69-D8FA97AFBC61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

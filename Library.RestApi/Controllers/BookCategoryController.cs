@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Library.Services.BookCategories.Contracts;
+﻿using Library.Services.BookCategories.Contracts;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 
 namespace Library.RestApi.Controllers
@@ -20,7 +17,7 @@ namespace Library.RestApi.Controllers
         [HttpPost]
         public async Task Post(AddBookCategoryDto dto)
         {
-           await _service.Add(dto);
+            await _service.Add(dto);
         }
     }
 }

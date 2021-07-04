@@ -10,8 +10,6 @@ namespace Library.Services.Tests.Spec.Infrastructure
     public class ConfigurationFixture
     {
         public TestSettings Value { get; private set; }
-
-
     }
 
     public class TestSettings
@@ -22,8 +20,7 @@ namespace Library.Services.Tests.Spec.Infrastructure
     [CollectionDefinition(nameof(ConfigurationFixture), DisableParallelization = false)]
     public class ConfigurationCollectionFixture : ICollectionFixture<ConfigurationFixture>
     {
-
     }
-   
+
 
 }

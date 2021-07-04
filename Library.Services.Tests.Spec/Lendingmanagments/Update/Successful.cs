@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using Library.Persistance.EF;
-using Library.Services.LendingManagments;
 using Library.Services.LendingManagments.Contracts;
 using Library.Services.LendingManagments.Exceptions;
 using Library.Services.Tests.Spec.Infrastructure;
@@ -9,9 +8,7 @@ using Library.Test.Tools.Books;
 using Library.Test.Tools.LendingManagments;
 using Library.Test.Tools.MemberShips;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -44,20 +41,20 @@ namespace Library.Services.Tests.Spec.Lendingmanagments.Update
             _bookId = new BookBuilder(_context)
                 .WithTitleAndBookCategoryId("TravelToDeepEarth", _bookCategoryId)
                 .Build();
-            _lendingManagmentId = LendingManagmentFactory.AddLendingManagment(_memberShipId , _bookId ,new DateTime(2021,07,02) );
+            _lendingManagmentId = LendingManagmentFactory.AddLendingManagment(_memberShipId, _bookId, new DateTime(2021, 07, 02));
         }
         [When("زمانی که کتاب با عنوان سفر به اعماق زمینتوسط عضوی با نام محمد غلامی در تاریخ 2021,07,04 برگشت داده شود")]
         private void When()
         {
-             _expected = ()=>  _sut.Update(_lendingManagmentId);
-            
+            _expected = () => _sut.Update(_lendingManagmentId);
+
         }
         [Then("تنها یک امانت داده شده مربوط به کتاب با عنوان سفر به اعماق زمین به یک عضو" +
             " کتابخانه با نام محمد غلامی با تاریخ برگشت 2021,07,04 و تاریخ تحویل 2021,07,05  وجود داشته باشد")]
         private void Then()
         {
             _expected.Should().ThrowExactly<AuthorizedDeliveryDateIsOverException>();
-            var expectedAfterUpdate = _context.LendingManagments.Single(_=>_.Id == _lendingManagmentId);
+            var expectedAfterUpdate = _context.LendingManagments.Single(_ => _.Id == _lendingManagmentId);
             expectedAfterUpdate.MemberShipId.Should().Be(_memberShipId);
             expectedAfterUpdate.BookId.Should().Be(_bookId);
             expectedAfterUpdate.AuthorizedDeliveryDate = new DateTime(2021, 07, 02);
@@ -70,6 +67,7 @@ namespace Library.Services.Tests.Spec.Lendingmanagments.Update
                 _ => Given(),
                 _ => When(),
                 _ => Then());
+          
         }
     }
 }

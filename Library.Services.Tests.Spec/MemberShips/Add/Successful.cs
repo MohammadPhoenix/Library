@@ -1,13 +1,11 @@
 ﻿using FluentAssertions;
 using Library.Persistance.EF;
+using Library.Persistance.EF.MemberShips;
 using Library.Services.MemberShips;
 using Library.Services.MemberShips.Contracts;
 using Library.Services.Tests.Spec.Infrastructure;
-using Library.Test.Tools.MemberShips;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -17,14 +15,17 @@ namespace Library.Services.Tests.Spec.MemberShips.Add
     public class Successful : EFDataContextDatabaseFixture
     {
         private readonly EFDataContext _context;
-        private MemberShipService sut;
-        private AddMemberShipDto _memberShipdto;
+        private MemberShipService _sut;
+        private AddMemberShipDto _memberShipDto;
         private int _memberShipId;
 
         public Successful(ConfigurationFixture configuration) : base(configuration)
         {
             _context = CreateDataContext();
-            sut = MemberShipFactory.CreateService(_context);
+            var unitOfWork = new EFUnitOfWorkRepository(_context);
+            var repository = new EFMemberShipRepository(_context);
+            _sut = new MemberShipAppService(repository, unitOfWork);
+
         }
         [Given("هیچ عضوی در کتابخانه وجود ندارد")]
         private void Given()
@@ -34,22 +35,22 @@ namespace Library.Services.Tests.Spec.MemberShips.Add
             "به فهرست اعضای کتابخانه اضافه می کنم")]
         private async Task When()
         {
-            _memberShipdto = new AddMemberShipDto
+            _memberShipDto = new AddMemberShipDto
             {
                 FullName = "Mohammad Gholami",
                 BirthDate = new DateTime(1999, 01, 01),
                 Address = "Shiraz-Atlasi"
             };
-            _memberShipId = await sut.Add(_memberShipdto);
+            _memberShipId = await _sut.Add(_memberShipDto);
         }
         [Then("باید تنها یک شخص با نام محمد غلامی و سن 22 سال (1999,01,01) و " +
             "آدرس شیراز-اطلسی به فهرست اعضای کتابخانه اضافه شده باشد")]
         private void Then()
         {
-            var expected = _context.MemberShips.Single(_=>_.Id==_memberShipId);
-            expected.FullName.Should().Be(_memberShipdto.FullName);
-            expected.BirthDate.Should().Be(_memberShipdto.BirthDate);
-            expected.Address.Should().Be(_memberShipdto.Address);
+            var expected = _context.MemberShips.Single(_ => _.Id == _memberShipId);
+            expected.FullName.Should().Be(_memberShipDto.FullName);
+            expected.BirthDate.Should().Be(_memberShipDto.BirthDate);
+            expected.Address.Should().Be(_memberShipDto.Address);
         }
         [Fact]
         public void Run()

@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using Library.Persistance.EF;
-using Library.Services.LendingManagments;
 using Library.Services.LendingManagments.Contracts;
 using Library.Services.Tests.Spec.Infrastructure;
 using Library.Test.Tools.BookCategories;
@@ -8,9 +7,7 @@ using Library.Test.Tools.Books;
 using Library.Test.Tools.LendingManagments;
 using Library.Test.Tools.MemberShips;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -42,7 +39,7 @@ namespace Library.Services.Tests.Spec.Lendingmanagments.Add
                 .Build();
 
             _bookCategoryId = BookCategoryFactory.AddBookCategoryWithTitle(_context, "ScienceFiction");
-            
+
             _bookId = new BookBuilder(_context)
                 .WithTitleAndBookCategoryId("TravelToDeepEarth", _bookCategoryId)
                 .Build();
@@ -53,17 +50,18 @@ namespace Library.Services.Tests.Spec.Lendingmanagments.Add
         private async Task When()
         {
             var dto = LendingManagmentFactory
-                .Generate_AddLendingManagmentDto(_memberShipId,_bookId,new DateTime(2021,07,04));
-            _lendingManagmentId =await _sut.Add(dto);
+                .Generate_AddLendingManagmentDto(_memberShipId, _bookId, new DateTime(2021, 07, 04));
+
+            _lendingManagmentId = await _sut.Add(dto);
         }
         [Then("در فهرست امانت ها باید تنها یک کتاب با عنوان سفر به اعماق زمین و رده سنی 16 تا 88 سال" +
             " به عضوی از کتاب خانه با نام محمد غلامی و 22 سال با تاریخ برگشت 2021,07,04 به امانت سپرده شده باشد")]
         private void Then()
         {
-            var expected = _context.LendingManagments.Single(_=>_.Id == _lendingManagmentId);
+            var expected = _context.LendingManagments.Single(_ => _.Id == _lendingManagmentId);
             expected.MemberShipId.Should().Be(_memberShipId);
             expected.BookId.Should().Be(_bookId);
-            expected.AuthorizedDeliveryDate.Should().Be(new DateTime(2021,07,04));
+            expected.AuthorizedDeliveryDate.Should().Be(new DateTime(2021, 07, 04));
             expected.DeliveryDate.Should().BeNull();
         }
         [Fact]

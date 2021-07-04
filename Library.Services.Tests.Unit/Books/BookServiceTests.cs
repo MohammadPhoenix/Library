@@ -14,7 +14,6 @@ namespace Library.Services.Tests.Unit.Books
     {
         private readonly EFDataContext _context;
         private readonly BookAppService _sut;
-
         public BookServiceTests()
         {
             var db = new EFInMemoryDatabase();

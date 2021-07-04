@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using Library.Entites;
 using Library.Persistance.EF;
 using Library.Services.BookCategories.Contracts;
 using Library.Services.Tests.Spec.Infrastructure;
@@ -14,14 +13,14 @@ namespace Library.Services.Tests.Spec.BookCategories.Add
     public class Successful : EFDataContextDatabaseFixture
     {
         private readonly EFDataContext _context;
-        private BookCategoryService sut;
-        private AddBookCategoryDto bookCategory;
-        private short bookCategoryId;
+        private BookCategoryService _sut;
+        private AddBookCategoryDto _bookCategory;
+        private short _bookCategoryId;
 
         public Successful(ConfigurationFixture configuration) : base(configuration)
         {
             _context = CreateDataContext();
-            sut = BookCategoryFactory.CreateService(_context);
+            _sut = BookCategoryFactory.CreateService(_context);
         }
         [Given("هیچ دسته بندی ای وجود ندارد")]
         private void Given()
@@ -30,13 +29,13 @@ namespace Library.Services.Tests.Spec.BookCategories.Add
         [When("یک دسته بندی با عنوان علمی تخیلی اضافه می نمایم")]
         private async Task When()
         {
-            bookCategory = BookCategoryFactory.GenerateBookCategoryWithTitleDto(_context, "ScienceFiction");
-            bookCategoryId = await sut.Add(bookCategory);
+            _bookCategory = BookCategoryFactory.GenerateBookCategoryWithTitleDto(_context, "ScienceFiction");
+            _bookCategoryId = await _sut.Add(_bookCategory);
         }
         [Then("")]
         private void Then()
         {
-            var expected = _context.BookCategories.Single(_ => _.Id == bookCategoryId);
+            var expected = _context.BookCategories.Single(_ => _.Id == _bookCategoryId);
             expected.Title.Should().Be("ScienceFiction");
         }
         [Fact]

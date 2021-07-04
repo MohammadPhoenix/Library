@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Library.Services.MemberShips.Contracts;
+﻿using Library.Services.MemberShips.Contracts;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
