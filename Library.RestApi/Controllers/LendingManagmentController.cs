@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Library.RestApi.Controllers
 {
-    [Route("api/[controller]/LendingManagment")]
+    [Route("api/[controller]")]
     public class LendingManagmentController : Controller
     {
         private readonly LendingManagmentService _service;

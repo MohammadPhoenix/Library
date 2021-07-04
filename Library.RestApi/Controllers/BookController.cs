@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Library.RestApi.Controllers
 {
-    [Route("api/[controller]/Books")]
+    [Route("api/[controller]")]
     public class BookController : Controller
     {
         private readonly BookService _service;

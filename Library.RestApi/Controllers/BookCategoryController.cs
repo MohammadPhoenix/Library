@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Library.RestApi.Controllers
 {
-    [Route("api/[controller]/BookCategory")]
+    [Route("api/[controller]")]
     public class BookCategoryController : Controller
     {
         private readonly BookCategoryService _service;
